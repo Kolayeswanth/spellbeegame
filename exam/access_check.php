@@ -8,7 +8,7 @@ if(isset($_POST['mobile']) && $_POST['pin']=="231122")
 
   include "connect.php";  
   
-  $result=mysqli_query($conn, "select * from users3 where pid='$pid' and status=1");
+  $result=mysqli_query($conn, "select * from users where pid='$pid' and status=1");
   
   if(mysqli_num_rows($result) > 0)
    {

@@ -12,7 +12,7 @@
 		<div class="center-sign">
 			<div class="panel card-sign">
 				<div class="card-body">
-					<form action="dashboard4.php" method='post'>
+					<form action="dashboard.php" method='post'>
 						<div class="current-user text-center">
 							<img src="img/full_logo.jpg" alt="BO HOUSIE" class="rounded-circle user-image" />
 							<h2 class="user-name text-dark m-0" style='font-size:24px;'>SPELL BEE LOGIN</h2>

@@ -8,7 +8,7 @@ include 'connect.php';
 
 $sid = $_SESSION['pid'];
 
-$checkstart = mysqli_fetch_assoc(mysqli_query($conn, "SELECT `start_time` from users3 where pid='$sid';"))['start_time'];
+$checkstart = mysqli_fetch_assoc(mysqli_query($conn, "SELECT `start_time` from users where pid='$sid';"))['start_time'];
 if ($checkstart == NULL)
 header('Location: startgame.php');
 
@@ -18,7 +18,7 @@ $qres = mysqli_fetch_array($nqres);
 
 $q = $qres[0] + 1;
 
-$statuscheck = mysqli_fetch_assoc(mysqli_query($conn, "SELECT `status` from users3 where pid='$sid';"))['status'];
+$statuscheck = mysqli_fetch_assoc(mysqli_query($conn, "SELECT `status` from users where pid='$sid';"))['status'];
 if ($statuscheck == 0) header('Location: index.php?stop');
 
 if (isset($_GET['qid'])) {
@@ -326,8 +326,8 @@ $q = $qres[0] + 1;
 									$point = mysqli_fetch_assoc(mysqli_query($conn, "SELECT *, sum(marks) as points from responses3 where sid='$sid';"));
 									$points = $point['points'];
 
-									mysqli_query($conn, "UPDATE users3 set `points`=$points where pid='$sid';");
-									if(is_null($point['end_time'])) {mysqli_query($conn, "UPDATE users3 set `end_time`=now() where pid='$sid'");}
+									mysqli_query($conn, "UPDATE users set `points`=$points where pid='$sid';");
+									if(is_null($point['end_time'])) {mysqli_query($conn, "UPDATE users set `end_time`=now() where pid='$sid'");}
 
 									echo "<h3 style='color:red;' align='center'>YOUR SPELL BEE QUIZ HAS BEEN COMPLETED!</h3>";
 								?>

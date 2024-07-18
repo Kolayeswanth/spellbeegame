@@ -143,7 +143,7 @@ include 'connect.php';
                   $leaderboard = mysqli_query($conn, "SELECT sum(marks) as marks,`sid` from responses3 GROUP BY `sid` ORDER BY marks DESC;");
                   while ($row = mysqli_fetch_assoc($leaderboard)) {
 
-                    $lbord = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM `users3` WHERE `pid` = '{$row['sid']}'"));
+                    $lbord = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM `users` WHERE `pid` = '{$row['sid']}'"));
                     $stime = strtotime($lbord['start_time']);
                     $etime = strtotime($lbord['end_time']);
                     $time = $etime - $stime;

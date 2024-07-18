@@ -9,7 +9,7 @@
             include "connect.php";
             // current time
             $time = date('h:i:s');
-            $result=mysqli_query($conn, "update users3 set start_time=now() where pid='$_SESSION[pid]'");
+            $result=mysqli_query($conn, "update users set start_time=now() where pid='$_SESSION[pid]'");
             if($result)
             {
                 header("Location:dashboard4.php");
