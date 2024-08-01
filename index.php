@@ -64,10 +64,7 @@
 <body class="menu-always-on-top">
 
     <!-- BEGIN STYLE CUSTOMIZER -->
-    <div class="color-panel">
-        <div class="color-mode-icons icon-color"><a href='thirdround.php' style='color:#FFF'>Selected List</a></div>
-        <!-- <div class="color-mode-icons icon-color-close"></div> -->
-    </div>
+    
     <!-- END BEGIN STYLE CUSTOMIZER -->
 
     <!-- Header BEGIN -->
@@ -126,11 +123,10 @@
                                 <span class="carousel-subtitle-v1">IMPORTANT DATES</span>
                                 <h3 class="margin-bottom-20 animate-delay promo-like-text"
                                     data-animation="animated fadeInDown">
-                                    <div STYLE='font-size:28px;'><span class='color-red'>ROUND 1:</span> 04th SEP - 10th
-                                        OCT 2023</div>
-                                    <div STYLE='font-size:28px;'><span class='color-red'>ROUND 2:</span> 12th OCT - 28th
-                                        OCT 2023</div>
-                                    <div STYLE='font-size:28px;'><span class='color-red'>ROUND 3:</span> November 2nd </div>
+                                    <div STYLE='font-size:28px;'><span class='color-red'>ROUND 1:</span> 01th AUG - 30th
+                                        AUG 2024</div>
+                                    <div STYLE='font-size:28px;'><span class='color-red'>ROUND 2:</span> Coming soon....</div>
+                                    <div STYLE='font-size:28px;'><span class='color-red'>ROUND 3:</span> Coming soon....</div>
                                 </h3>
                             </div>
                         </div>
@@ -265,35 +261,35 @@
         <div class="container">
             <h2>Exciting <strong>Prizes</strong></h2>
             <div class="ab-trio">
-                <img src="assets/onepage/img/trio.png" alt="" class="img-responsive">
+                <img src="assets/onepage/img/heyyy.svg" alt="" class="img-responsive">
             </div>
             <br>
             <h2 style='font-size:24px;'>Contest <strong>Sponsors</strong></h2>
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-xs-12 item">
-                    <h3>Prime Sponsor</h3>
+                    <h3></h3>
                     <!--		        <a href="assets/onepage/img/sponsors/bhubl.jpg" class="zoom valign-center"> -->
-                    <a href='http://www.purplelane.in' target='plane'>
-                        <center> <img src="assets/onepage/img/sponsors/purplelane.png" alt="" class="img-responsive">
+                    <a href='' target='plane'>
+                        <center> <img src="assets/onepage/img/sponsors/" alt="" class="img-responsive">
                         </center>
-                        <b>www.purplelane.in</b>
+                        <b></b>
                     </a>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-12 item">
-                    <h3>Title Sponsor</h3> <br>
-                    <a href='https://bhimavaramonline.page.link/dhgB' target='bvrmol'>
-                        <center> <img src="assets/onepage/img/sponsors/bvrmol.png" alt="" class="img-responsive">
+                    <h3>Prime Sponsor</h3> <br>
+                    <a href='https://naidugarikundabiryani.com/' target='bvrmol'>
+                        <center> <img src="assets/onepage/img/sponsors/naidu.png" alt="" class="img-responsive">
                         </center>
-                        <b>Bhimavaram Online</b>
+                        <b>https://naidugarikundabiryani.com/</b>
                     </a>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-12 item">
-                    <h3>Associate Sponsor</h3>
+                    <h3></h3>
                     <br>
-                    <a href='https://bhimavaramonline.page.link/gvFA' target='kshatriya'>
-                        <center><img src="assets/onepage/img/sponsors/kkitchen.png" alt="" class="img-responsive">
+                    <a href='' target='kshatriya'>
+                        <center><img src="assets/onepage/im" alt="" class="img-responsive">
                         </center>
-                        <b>Kshatriya's Kitchen</b>
+                        <b></b>
                     </a>
                 </div>
             </div>
@@ -482,7 +478,7 @@
                 for any unanswered queries.</h4>
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-12 text-left">
-                    <img src="assets/onepage/img/choose-us.png" alt="Why to choose us" class="img-responsive">
+                    <img src="assets/onepage/img/banner.jpg" alt="Why to choose us" class="img-responsive">
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12 text-left">
                     <div class="panel-group" id="accordion1">
@@ -616,7 +612,7 @@
             style='background-color:#C91E3E;color:#ffff; font-size:18px;box-shadow: 3px 3px 1px white;'><b> View SRKR
                 SPELLBEE LEADERBOARD</b></a>
         <br><br><br>
-        <h2>Spell Champ 2023 Registration Stats</h2>
+        <h2>Spell Champ 2024 Registration Stats</h2>
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-sm-3 col-xs-6">
@@ -897,10 +893,10 @@
                             <p><span class="news-text">Bharath (2/4 CSD)</span></p>
                         </div>
                         <div class="news-item">
-                            <p><span class="news-text">Vamsi (2/4 CSD)</span></p>
+                            <p><span class="news-text">tejeswi (2/4 CSD)</span></p>
                         </div>
                         <div class="news-item">
-                            <p><span class="news-text">tejeswini (2/4 CSD)</span></p>
+                            <p><span class="news-text">Vamsi (2/4 CSD)</span></p>
                         </div>
                         <div class="news-item">
                             <p><span class="news-text">karimunisa (2/4 CSD)</span></p>
