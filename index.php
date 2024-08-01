@@ -36,26 +36,26 @@
 
 
     <style type='text/css'>
-    .blink {
-        animation: blink-animation 3s steps(5, start) infinite;
-        -webkit-animation: blink-animation 3s steps(5, start) infinite;
-    }
-
-    @keyframes blink-animation {
-        to {
-            visibility: hidden;
+        .blink {
+            animation: blink-animation 3s steps(5, start) infinite;
+            -webkit-animation: blink-animation 3s steps(5, start) infinite;
         }
-    }
 
-    @-webkit-keyframes blink-animation {
-        to {
-            visibility: hidden;
+        @keyframes blink-animation {
+            to {
+                visibility: hidden;
+            }
         }
-    }
 
-    h3 {
-        font-size: 14px;
-    }
+        @-webkit-keyframes blink-animation {
+            to {
+                visibility: hidden;
+            }
+        }
+
+        h3 {
+            font-size: 14px;
+        }
     </style>
 
 </head>
@@ -64,7 +64,7 @@
 <body class="menu-always-on-top">
 
     <!-- BEGIN STYLE CUSTOMIZER -->
-    
+
     <!-- END BEGIN STYLE CUSTOMIZER -->
 
     <!-- Header BEGIN -->
@@ -125,8 +125,10 @@
                                     data-animation="animated fadeInDown">
                                     <div STYLE='font-size:28px;'><span class='color-red'>ROUND 1:</span> 01th AUG - 30th
                                         AUG 2024</div>
-                                    <div STYLE='font-size:28px;'><span class='color-red'>ROUND 2:</span> Coming soon....</div>
-                                    <div STYLE='font-size:28px;'><span class='color-red'>ROUND 3:</span> Coming soon....</div>
+                                    <div STYLE='font-size:28px;'><span class='color-red'>ROUND 2:</span> Coming soon....
+                                    </div>
+                                    <div STYLE='font-size:28px;'><span class='color-red'>ROUND 3:</span> Coming soon....
+                                    </div>
                                 </h3>
                             </div>
                         </div>
@@ -628,16 +630,32 @@
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-6">
-                    <div class="item">
-                        <strong><?php echo mysqli_fetch_assoc(mysqli_query($conn, "SELECT MAX(points) as top FROM `users` "))['top'] ?></strong>
-                        HIGHEST SCORE
-                    </div>
-                </div>
+    <?php
+    $result = mysqli_query($conn, "SELECT MAX(points) as top FROM `users`");
+    $row = mysqli_fetch_assoc($result);
+    $highestScore = isset($row['top']) ? $row['top'] : '0';
+    ?>
+
+    <div class="item">
+        <strong><?php echo $highestScore; ?></strong>
+        <br>
+        HIGHEST SCORE
+    </div>
+</div>
+
+
                 <div class="col-md-3 col-sm-3 col-xs-6">
+                    <?php
+                    $result = mysqli_query($conn, "SELECT `department` as top FROM `users` WHERE `points` = (SELECT MAX(points) FROM `users`) ORDER BY `lastseen` DESC LIMIT 1");
+                    $row = mysqli_fetch_assoc($result);
+                    $department = $row ? $row['top'] : '0';
+                    ?>
+
                     <div class="item">
-                        <strong><?php echo mysqli_fetch_assoc(mysqli_query($conn, "SELECT `department` as top FROM `users`WHERE `points` = ( SELECT MAX(points) FROM `users`) ORDER BY `lastseen` DESC LIMIT 1 "))['top'] ?></strong>
+                        <strong><?php echo $department; ?></strong>
                         HIGH SCORE DEPARTMENT
                     </div>
+
                 </div>
             </div>
         </div>
@@ -747,94 +765,94 @@
             <h2>Meet <strong>The Student Team</strong></h2>
             <div class="row">
                 <style>
-                /* Style for the news scrolling section */
-                .news-scrolling {
-                    background-color: #C91E3E;
-                    /* Background color for the scrolling section */
-                    padding: 10px 0;
-                    /* 10px padding at the top and bottom */
-                    text-align: center;
-                    white-space: nowrap;
-                    /* Prevent text from wrapping to multiple lines */
-                    overflow: hidden;
-                    /* Hide overflow content */
-                    color: #FFFFFF;
-                    /* Text color */
-                    font-size: 16px;
-                    /* Font size */
-                    font-weight: bold;
-                    /* Bold text */
-                }
-
-                /* Style for the scrolling marquee */
-                .marquee {
-                    animation: marquee 45s linear infinite;
-                    /* Start the marquee animation immediately */
-                    display: inline-block;
-                    /* Ensure the marquee stays inline */
-                    white-space: nowrap;
-                    /* Prevent text from wrapping */
-                }
-
-
-                /* Pause the marquee animation on hover */
-                .marquee:hover {
-                    animation-play-state: paused;
-                }
-
-                /* Keyframes for the marquee animation */
-                @keyframes marquee {
-                    0% {
-                        transform: translateX(50%);
+                    /* Style for the news scrolling section */
+                    .news-scrolling {
+                        background-color: #C91E3E;
+                        /* Background color for the scrolling section */
+                        padding: 10px 0;
+                        /* 10px padding at the top and bottom */
+                        text-align: center;
+                        white-space: nowrap;
+                        /* Prevent text from wrapping to multiple lines */
+                        overflow: hidden;
+                        /* Hide overflow content */
+                        color: #FFFFFF;
+                        /* Text color */
+                        font-size: 16px;
+                        /* Font size */
+                        font-weight: bold;
+                        /* Bold text */
                     }
 
-                    100% {
-                        transform: translateX(-100%);
+                    /* Style for the scrolling marquee */
+                    .marquee {
+                        animation: marquee 45s linear infinite;
+                        /* Start the marquee animation immediately */
+                        display: inline-block;
+                        /* Ensure the marquee stays inline */
+                        white-space: nowrap;
+                        /* Prevent text from wrapping */
                     }
-                }
 
-                /* Style for individual news items */
-                .news-item {
-                    display: inline-block;
-                    white-space: nowrap;
-                    /* Prevent text from wrapping to multiple lines */
-                    margin-right: 20px;
-                    /* Add a margin to create a gap between names */
-                }
 
-                /* Style for news text (non-link part) */
-                .news-text {
-                    color: #FFFFFF;
-                    /* Text color */
-                    display: inline;
-                    /* Display the text inline */
-                }
+                    /* Pause the marquee animation on hover */
+                    .marquee:hover {
+                        animation-play-state: paused;
+                    }
 
-                /* Style for news links */
-                .news-link {
-                    color: #C91E3E;
-                    /* Change link text color to #C91E3E */
-                    text-decoration: none;
-                    /* Remove underline from links */
-                    background-color: white;
-                    /* Change background color to white */
-                    padding: 5px 5px;
-                    /* Add padding to the button for better appearance */
-                    border-radius: 5px;
-                    /* Add rounded corners to the button */
-                    display: inline;
-                    /* Display the button inline */
-                    margin-left: 10px;
-                    /* Add spacing to separate the button from the text */
-                    cursor: pointer;
-                    /* Change cursor to pointer on hover */
-                }
+                    /* Keyframes for the marquee animation */
+                    @keyframes marquee {
+                        0% {
+                            transform: translateX(50%);
+                        }
 
-                /* Style for the white text */
-                .white-text {
-                    color: #FFFFFF;
-                    /* Text color */
-                }
+                        100% {
+                            transform: translateX(-100%);
+                        }
+                    }
+
+                    /* Style for individual news items */
+                    .news-item {
+                        display: inline-block;
+                        white-space: nowrap;
+                        /* Prevent text from wrapping to multiple lines */
+                        margin-right: 20px;
+                        /* Add a margin to create a gap between names */
+                    }
+
+                    /* Style for news text (non-link part) */
+                    .news-text {
+                        color: #FFFFFF;
+                        /* Text color */
+                        display: inline;
+                        /* Display the text inline */
+                    }
+
+                    /* Style for news links */
+                    .news-link {
+                        color: #C91E3E;
+                        /* Change link text color to #C91E3E */
+                        text-decoration: none;
+                        /* Remove underline from links */
+                        background-color: white;
+                        /* Change background color to white */
+                        padding: 5px 5px;
+                        /* Add padding to the button for better appearance */
+                        border-radius: 5px;
+                        /* Add rounded corners to the button */
+                        display: inline;
+                        /* Display the button inline */
+                        margin-left: 10px;
+                        /* Add spacing to separate the button from the text */
+                        cursor: pointer;
+                        /* Change cursor to pointer on hover */
+                    }
+
+                    /* Style for the white text */
+                    .white-text {
+                        color: #FFFFFF;
+                        /* Text color */
+                    }
                 </style>
 
 
@@ -979,20 +997,20 @@
     <!-- Team block END -->
 
 
-    <?php include   'footer.php'; ?>
+    <?php include 'footer.php'; ?>
 
     <script>
-    jQuery(document).ready(function() {
-        Layout.init();
-    });
+        jQuery(document).ready(function () {
+            Layout.init();
+        });
 
-    // Get the marquee element by ID
-    const marquee = document.getElementById('scrolling-marquee');
+        // Get the marquee element by ID
+        const marquee = document.getElementById('scrolling-marquee');
 
-    // Resume the marquee animation when the cursor leaves the marquee
-    marquee.addEventListener('mouseout', function() {
-        marquee.style.animationPlayState = 'running';
-    });
+        // Resume the marquee animation when the cursor leaves the marquee
+        marquee.addEventListener('mouseout', function () {
+            marquee.style.animationPlayState = 'running';
+        });
     </script>
 
     <!-- Global js END -->
