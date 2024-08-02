@@ -68,7 +68,7 @@
     <div class="about-block content content-center" id="about">
         <div class="container">
             <br><br>
-            <h3><strong><b>SPELL CHAMP 2023</b></strong> RULES & REGULATIONS</h3>
+            <h3><strong><b>SPELL CHAMP 2024</b></strong> RULES & REGULATIONS</h3>
             <br>
 
             <h2 style='font-size:24px;'>Process of Registration</h2>

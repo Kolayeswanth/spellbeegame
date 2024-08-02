@@ -121,7 +121,7 @@ if (isset($_POST['newregistration'])) {
         <div class="container">
 
             <br>
-            <h3><strong><b>SRKR SPELL BEE</b></strong> 2K23</h3>
+            <h3><strong><b>SRKR SPELL BEE</b></strong> 2K24</h3>
 
 
             <div class="col-md-4"></div>

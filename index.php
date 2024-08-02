@@ -62,6 +62,7 @@
 <!--DOC: menu-always-on-top class to the body element to set menu on top -->
 
 <body class="menu-always-on-top">
+    <?php include 'header.php'; ?>
 
     <!-- BEGIN STYLE CUSTOMIZER -->
 
@@ -84,7 +85,7 @@
                         <li><a href="index.php#services">Prizes</a></li>
                         <li><a href="index.php#portfolio">Leader Board</a></li>
                         <li><a href="index.php#benefits">FAQ</a></li>
-                        <li><a href="index.php#prices"><strong style='color:#C91E3E;'>REGISTER</strong></a></li>
+                        <li><a href="register.php"><strong style='color:#C91E3E;'>REGISTER</strong></a></li>
                         <li><a href="index.php#team">Team</a></li>
                         <li><a href="index.php#contact">Contact</a></li>
                     </ul>
@@ -263,7 +264,7 @@
         <div class="container">
             <h2>Exciting <strong>Prizes</strong></h2>
             <div class="ab-trio">
-                <img src="assets/onepage/img/heyyy.svg" alt="" class="img-responsive">
+                <img src="assets\onepage\img\trio.png" alt="" class="img-responsive">
             </div>
             <br>
             <h2 style='font-size:24px;'>Contest <strong>Sponsors</strong></h2>
@@ -531,7 +532,7 @@
                                         prizes, you
                                         can assess your Spelling skills and know where you stand among the potential
                                         peers
-                                        of SRKR. SRKR SpellBee Challenge 2023 is going to generate Ranks for the top
+                                        of SRKR. SRKR SpellBee Challenge 2024 is going to generate Ranks for the top
                                         10 students based on their overall performance in the contest. A certificate of
                                         merit or participation is given to acknowledge their performance.</p>
                                     <p>You can win an Boat EarPods / Smart Watches / Sound
@@ -760,7 +761,7 @@
     <!-- Team block END -->
 
     <!-- Team block BEGIN -->
-    <div class="team-block content content-center margin-bottom-40" id="team">
+    <!-- <div class="team-block content content-center margin-bottom-40" id="team">
         <div class="container">
             <h2>Meet <strong>The Student Team</strong></h2>
             <div class="row">
@@ -856,7 +857,7 @@
                 </style>
 
 
-                <!-- News Scrolling Section -->
+             News Scrolling Section
                 <div id="scrolling-marquee" class="news-scrolling">
                     <div class="marquee">
                         <div class="news-item">
@@ -993,7 +994,7 @@
                 <br><br>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Team block END -->
 
 

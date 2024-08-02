@@ -79,14 +79,10 @@
                     <tr style="height: 50px;">
                         <td style="padding: 0; margin: 0;">
                             <div class="mt-2" style="margin: 0;">
-                                <p class="powered" style="margin: 0;"> <a href="" target='_new'><img src='assets/onepage/img/team/10.png' style="width: 100px;  margin: 0;"></a></p>
+                                <p class="powered" style="margin: 0;"> <a href="" target='_new'><img src='assets/onepage/img/sponsors/naidu.png' style="width: 100px;  margin: 0;"></a></p>
                             </div>
                         </td>
-                        <td style="padding: 0; margin: 0;">
-                            <div class="mt-2" style="margin: 0;">
-                                <p class="powered" style="margin: 0;"> <a href="" target='_new'><img src='assets/onepage/img/team/9.png' style="width: 100px;  margin: 0;"></a></p>
-                            </div>
-                        </td>
+                        
                     </tr>
                 </table>
             </div>
@@ -102,7 +98,7 @@
                     2nd Floor, I-Hub Incubation Centre,<br>
                     Idea Lab, SRKR Engineering College,<br>
                     Chinna Amiram, Bhimavaram, A.P. - 534204<br>
-                    Phone : K.Sanju <a href="tel:+9848823311">+91 98488 23311</a><br>Ch. Ravi Kumar <a href="tel:+9052727402">+91 90527 27402</a><br>
+                    Phone : K.Yeswanth <a href="tel:+919676608446">+91 96766 08446</a><br>B Lakshman Kumr Reddy <a href="tel:+9187131582">+91 87121 31582</a><br>
                     <!-- Email: <a href="mailto:spellbee2k23@srkrec.edu.in">spellbee2k23@srkrec.edu.in</a><br> -->
                 </address>
                 <!-- END BOTTOM CONTACTS -->
@@ -118,7 +114,7 @@
         <div class="row">
             <!-- BEGIN COPYRIGHT -->
             <div class="col-md-8 col-sm-8">
-                <div class="copyright">© Computer Science & Design, SRKREC 2023 . All Rights Reserved.</div>
+                <div class="copyright">© Computer Science & Design, SRKREC 2024 . All Rights Reserved.</div>
             </div>
             <!-- END COPYRIGHT -->
             <!-- BEGIN COPYRIGHT -->

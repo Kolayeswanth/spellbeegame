@@ -112,7 +112,7 @@ include 'connect.php';
         <h2><strong><b>SRKR SPELLBEE PRIZES</b></strong></h2>
         <div class="container">
             <div class="ab-trio">
-                <img src="assets/onepage/img/trio.png" alt="" class="img-responsive">
+                <img src="assets\onepage\img\trio.png" alt="" class="img-responsive">
             </div>
             <br>
             <h2 style='font-size:24px;'><strong>TOP TEN </strong>PRIZES</h2>
