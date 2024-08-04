@@ -5,7 +5,7 @@
             <!-- BEGIN BOTTOM ABOUT BLOCK -->
             <div class="col-md-3 col-sm-6 pre-footer-col">
                 <h2>About us</h2>
-                <p style="align-self:auto;">SRKR SpellBee Contest is jointly organized by Computer Science & Design Branch in association with English Department and AICTE IdeaLab of SRKR Engineering College, Bhimavaram. The contest is conducted completely online using the custom software developed by the Software Development Club (SDC) of Computer Science & Design branch. </p>
+                <p style="align-self:auto;">SRKR SpellBee Contest is jointly organized by Computer Science & Design and Computer Science & Infornation Technology Branch in association with English Department and AICTE IdeaLab of SRKR Engineering College, Bhimavaram. The contest is conducted completely online using the custom software developed by the Software Development Club (SDC) of Computer Science & Design branch. </p>
             </div>
             <!-- END BOTTOM ABOUT BLOCK -->
             <!-- BEGIN TWITTER BLOCK -->
@@ -94,7 +94,8 @@
                 <!-- BEGIN BOTTOM CONTACTS -->
                 <h2>Our Contacts</h2>
                 <address class="margin-bottom-20">
-                    Computer Science & Design (CSD) Branch<br>
+                    Computer Science & Design (CSD) <br>
+                    Computer Science & Information Technology (CSIT) <br>
                     2nd Floor, I-Hub Incubation Centre,<br>
                     Idea Lab, SRKR Engineering College,<br>
                     Chinna Amiram, Bhimavaram, A.P. - 534204<br>
@@ -114,7 +115,7 @@
         <div class="row">
             <!-- BEGIN COPYRIGHT -->
             <div class="col-md-8 col-sm-8">
-                <div class="copyright">© Computer Science & Design, SRKREC 2024 . All Rights Reserved.</div>
+                <div class="copyright">© Computer Science & Design and Computer Science & Information Technology, SRKREC 2024 . All Rights Reserved.</div>
             </div>
             <!-- END COPYRIGHT -->
             <!-- BEGIN COPYRIGHT -->

@@ -46,7 +46,7 @@
 				<!-- end: sidebar -->
 				<section role="main" class="content-body">
 					<header class="page-header">
-						<h2>CSD SPELL BEE</h2>
+						<h2>CSD & CSIT SPELL BEE</h2>
 					</header>
 
 					<!-- start: page -->
