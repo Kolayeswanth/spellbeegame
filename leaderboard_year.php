@@ -20,8 +20,6 @@ if ($dept == 'CSE') {
     $fdept = "CIVIL ENGINEERING";
 } elseif ($dept == 'IT') {
     $fdept = "INFORMATION TECHNOLOGY";
-} elseif ($dept == 'CSD') {
-    $fdept = "COMPUTER SCIENCE & DATA SCIENCE";
 } elseif ($dept == 'CSBS') {
     $fdept = "COMPUTER SCIENCE & BUSINESS SYSTEMS";
 } elseif ($dept == 'CSD') {
