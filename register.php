@@ -2,7 +2,7 @@
 <html lang="en">
 
 <?php
-
+session_start();
 include "connect.php";
 if (isset($_POST['newregistration'])) {
     $name = $_POST['name'];
@@ -11,40 +11,22 @@ if (isset($_POST['newregistration'])) {
     $mobile = $_POST['mobile'];
     $branch = $_POST['branch'];
     $section = $_POST['section'];
-    $recaptchaResponse = $_POST['h-captcha-response'];
     $batch = $_POST['batch'];
 
-
-    $secretKey = "ES_6aec8d63fca04791b4648bc8c74b15bd"; // Replace with your Secret key
-    $url = "https://hcaptcha.com/siteverify";
-    $data = [
-        "secret" => $secretKey,
-        "response" => $recaptchaResponse,
-    ];
-
-    $verify = curl_init();
-    curl_setopt($verify, CURLOPT_URL, $url);
-    curl_setopt($verify, CURLOPT_POST, true);
-    curl_setopt($verify, CURLOPT_POSTFIELDS, http_build_query($data));
-    curl_setopt($verify, CURLOPT_RETURNTRANSFER, true);
-    $response = curl_exec($verify);
-    $responseData = json_decode($response);
-
-    if ($responseData->success) {
-        if (mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `users` WHERE `regno`='$regno' or `pid` = '$mobile'")) > 0) {
-            echo "<script>alert('You are already registered! you can go and play game campus online stall');</script>";
+    if (mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `users` WHERE `regno`='$regno' or `pid` = '$mobile'")) > 0) {
+        echo "<script>alert('You are already registered! you can go and play game campus online stall');</script>";
+    } else {
+        $newregistration = $conn->prepare("INSERT INTO `users`(`pid`, `player_name`, `place`, `regno`, `email`, `department`, `section`) VALUES (?,?,?,?,?,?,?)");
+        $newregistration->bind_param("ssissss", $mobile, $name, $batch, $regno, $email, $branch, $section);
+        if ($newregistration->execute()) {
+            $_SESSION['regno'] = $regno;
+            echo "<script>
+            var registrationSuccess = true;
+            var regNo = '$regno';
+        </script>";
         } else {
-            $newregistration = $conn->prepare("INSERT INTO `users`(`pid`, `player_name`, `place`, `regno`, `email`, `department`, `section`) VALUES (?,?,?,?,?,?,?)");
-            $newregistration->bind_param("ssissss", $mobile, $name, $batch, $regno, $email, $branch, $section);
-            if ($newregistration->execute()) {
-                echo "<script>alert('You Register Sucessfully you can go and play game in our stalls');</script>";
-            } else {
-                echo "<script>alert('Registration Failed');</script>";
-            }
+            echo "<script>alert('Registration Failed');</script>";
         }
-    }
-    else {
-        echo "<script>alert('Please verify captcha');</script>";
     }
 }
 ?>
@@ -61,6 +43,10 @@ if (isset($_POST['newregistration'])) {
 
 
     <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <!-- Fonts START -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Pathway+Gothic+One|PT+Sans+Narrow:400+700|Source+Sans+Pro:200,300,400,600,700,900&amp;subset=all" rel="stylesheet" type="text/css">
@@ -185,10 +171,6 @@ if (isset($_POST['newregistration'])) {
                 </form>
 
                 <br><br>
-                <h3><strong>NOTE: </strong> You can Pay money in our stalls and confirm you Registration, If you want to
-                    pay money online you can <strong><a href="https://pages.razorpay.com/pl_MUwbEmBPOkmZtK/view" target="_blank">Register Here</a></strong>.</h3><br><br>
-                <!-- <br><br><br><br><br><br><br><br><br><br><br> -->
-
             </div>
         </div>
     </div>
@@ -196,6 +178,44 @@ if (isset($_POST['newregistration'])) {
 
 
     <?php include "footer.php"; ?>
+    <!-- Add this at the end of your body tag -->
+    <div class="modal" id="paymentModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Payment Options</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Registration successful! Please choose a payment option:</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="payAtStalls()">Pay at Stalls</button>
+                    <button type="button" class="btn btn-primary" onclick="payOnline()">Pay Online</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    if (typeof registrationSuccess !== 'undefined' && registrationSuccess) {
+        $('#paymentModal').modal('show');
+    }
+});
+
+function payAtStalls() {
+    $('#paymentModal').modal('hide');
+    alert("Thank you for your registration!");
+    // You can add any additional logic here if needed
+}
+
+function payOnline() {
+    // Redirect to Razorpay payment page
+    window.location.href = 'https://pages.razorpay.com/pl_OgJFJrnSKej3QT/view';
+}
+</script>
 
     <script>
         jQuery(document).ready(function() {
